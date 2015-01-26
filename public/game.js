@@ -100,7 +100,7 @@ server.on('donevote', function(yesVote, noVote, missionNumber, numRejects, propo
         $('.selected').removeClass('selected');
     }
 
-    voteResults.scrollTop(voteResults.prop("scrollHeight"));
+    voteResults.scrollTop(voteResults[0].scrollHeight);
 });
 
 server.on('onmission', function(team){
