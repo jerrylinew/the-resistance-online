@@ -2,7 +2,7 @@
  * Created by jerrylinew on 1/18/15.
  */
 
-var server = io.connect('localhost:8080');
+var server = io.connect('https://theresistanceonline.herokuapp.com/');
 
 var username;
 
