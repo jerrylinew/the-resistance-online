@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>The Resistance Online</title>
+    <link rel="stylesheet" href="design.css" type="text/css"/>
+    <link href='http://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div id="logo">
+        <img src="images/logo.jpeg" alt="logo"/>
+    </div>
+
+    <div id="info">
+        <div id="missionInfo">
+            <span id="missionNumber"></span><br/>
+            <span id="currentLeader"></span><br/>
+            <span id="consecRejects"></span>
+        </div>
+        <div id="allMissions">
+            <div class="missionStatus" id="mission1"><p></p></div>
+            <div class="missionStatus" id="mission2"><p></p></div>
+            <div class="missionStatus" id="mission3"><p></p></div>
+            <div class="missionStatus" id="mission4"><p></p></div>
+            <div class="missionStatus" id="mission5"><p></p></div>
+        </div>
+    </div>
+
+    <div id="actions">
+        <h3>Current Players</h3>
+        <ul id="playerList"></ul>
+        <p id="team"></p>
+        <p id="instructions">Waiting for game to start...</p>
+        <button id="joinButton">Join Game</button>
+        <button id="leaveButton">Leave Game</button>
+        <button id="startButton">Start Game</button>
+        <div id="gameButtons">
+            <button id="greenButton">Approve</button>
+            <button id="redButton">Reject</button>
+        </div>
+        <div id="successFail">
+            <img src="images/success.png" id="success"/>
+            <img src="images/fail.png" id="fail"/>
+        </div>
+        <div id="missionResults">
+
+        </div>
+    </div>
+
+    <div id="chatroom">
+        <div id="chatlog"></div>
+
+        <div id="inputbox">
+            <form id="form" action="https://theresistance.herokuapp.com/">
+                <input id="message" type="text" name="message"/>
+                <input id="submit" type="submit" value="SEND"/>
+            </form>
+        </div>
+    </div>
+
+    <div id="voteLeaderInfo">
+        <div id="leaderOrder">
+            <ul id="leaderOrderList"></ul>
+        </div>
+        <div id="votingResults">
+
+        </div>
+    </div>
+
+    <script src="http_code.jquery.com_jquery-2.0.0.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
+    <script src="chatroom.js"></script>
+    <script src="setup.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

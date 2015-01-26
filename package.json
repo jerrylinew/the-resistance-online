@@ -1,0 +1,11 @@
+{
+  "name": "The_Resistance",
+  "version": "0.0.1",
+  "description": "The Resistance Online",
+  "main": "server.js",
+  "author": "Jerry Li",
+  "dependencies": {
+    "express": "^4.10.7",
+    "socket.io": "^1.2.1"
+  }
+}
