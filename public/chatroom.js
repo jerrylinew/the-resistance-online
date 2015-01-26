@@ -24,7 +24,6 @@ function userconnect(){
     }
     username = nickname;
     server.emit('join', nickname);
-    server.emit('joingame');
 }
 
 server.on('connect', userconnect);
