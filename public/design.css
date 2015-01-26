@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Orbitron-Bold'), url(http://fonts.gstatic.com/s/orbitron/v6/Y82YH_MJJWnsH2yUA5AuYYgp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 body{
     font-family: Arial, sans-serif;
     height: 625px;
@@ -88,7 +96,7 @@ body{
     list-style-type: none;
     height: 195px;
     width: 356px;
-    padding: 0px;
+    padding: 0;
 }
 
 #playerList li {
@@ -176,7 +184,7 @@ body{
 
 #success, #fail{
     height: 130px;
-    margin: 0px 20px;
+    margin: 0 20px;
 }
 
 #chatroom{
@@ -196,7 +204,7 @@ body{
     border-right: 3px solid grey;
     background-color: whitesmoke;
     padding: 10px;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 0 0 10px;
 }
 
 #userlist h3{
@@ -255,7 +263,7 @@ body{
     float: left;
     height: 6.5%;
     width: 100%;
-    border-radius: 0px 0px 0px 10px;
+    border-radius: 0 0 0 10px;
 }
 
 #inputbox form{
@@ -289,7 +297,7 @@ body{
     background-color: grey;
     color: lightgray;
     font-family: Arial, sans-serif;
-    border-radius: 0px 0px 8px 0px;
+    border-radius: 0 0 8px 0;
 }
 
 #submit:focus{
