@@ -53,7 +53,7 @@ server.on('startgame', function(error, names, leader, missionSizes){
     $('#consecRejects').text("Consecutive Rejections: 0").hide().fadeIn(500);
     $('#mission1').addClass('currentMission');
     var leaderOrder = $('#leaderOrderList');
-    leaderOrder.append('<h3>Leader Order</h3>')
+    leaderOrder.append('<h3>Leader Order</h3>');
 
     for(var i = 0; i < names.length; i++){
         leaderOrder.append('<li>' + names[i].name + '</li>');

@@ -4,6 +4,7 @@
 
 var server = io.connect('https://theresistanceonline.herokuapp.com/');
 
+
 var username;
 
 function userconnect(){
@@ -39,11 +40,13 @@ function userconnect(){
 
             swal({
                 title: 'Good luck on your missions!',
-                confirmButtonText: 'Join Game'
+                text: 'If you do not know the rules to <em>The Resistance: Avalon</em>, please visit this link: <a target="_blank" href="http://www.redmeeple.com/site/images/Rules/The_Resistance_Avalon_Rules(EN).pdf">Rulebook</a> (only the Merlin and Assassin roles will be used)',
+                confirmButtonText: 'Join Game',
+                html: true
             }, function(){
                 server.emit('join', username);
                 server.emit('joingame');
-                $('#game').fadeIn(2000);
+                $('#game').fadeIn(1500);
             });
 
         }
