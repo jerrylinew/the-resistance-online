@@ -31,7 +31,7 @@ $actions.on('click', '#startButton', function(e){
 });
 server.on('startgame', function(error, names, leader, missionSizes){
     if(error === false) {
-        alert("Game must have at least 5 players to begin.");
+        swal("Game must have at least 5 players to begin.");
         return;
     }
 

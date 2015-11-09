@@ -8,7 +8,7 @@ server.on('chooseTeam', function(numTeamMembers){
 
     $('#greenButton').text('Confirm').on('click', function(e){
         if(chosen.length !== numTeamMembers){
-            alert("Please choose exactly " + numTeamMembers + " people to go on the mission.");
+            swal("Please choose exactly " + numTeamMembers + " people to go on the mission.");
             return;
         }
 

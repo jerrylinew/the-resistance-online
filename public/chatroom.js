@@ -2,34 +2,60 @@
  * Created by jerrylinew on 1/18/15.
  */
 
-var server = io.connect('https://theresistanceonline.herokuapp.com/');
+//var server = io.connect('https://theresistanceonline.herokuapp.com/');
+var server = io.connect('http://localhost:8000/');
 
 var username;
 
 function userconnect(){
     var nickname = null;
-    while(nickname == null || nickname == '') {
-        nickname = prompt("Pick a username:");
-        if(nickname == null || nickname == '')
-            continue;
-        if(nickname.length >= 10) {
-            alert('Name is too long, please enter another username.');
-            nickname = '';
-            continue;
+
+    swal({
+        title: "Welcome to <em>The Resistance</em>!",
+        text: 'The Empire must fall. Our mission must succeed. By destroying their key bases, we will shatter ' +
+        'Imperial strength and liberate our people. Yet spies have infiltrated our ranks, ready for sabotage. ' +
+        'We must unmask them. In five nights we reshape destiny or die trying. We are the Resistance! </br>' +
+        '</br> Please enter your username:',
+        type: 'input',
+        showCancelButton: false,
+        closeOnConfirm: false,
+        html: true,
+        animation: "slide-from-top"
+    }, function(inputValue){
+        nickname = inputValue;
+        if(nickname == null || nickname == ''){
+            swal.showInputError("Your username cannot be empty!");
+            return false;
         }
-        if(nickname.indexOf(' ') != -1){
-            alert('Please enter a username without a space.');
-            nickname = '';
+        else if(nickname.length >= 10) {
+            swal.showInputError("Your username is too long, please choose a shorter one.");
+            return false;
         }
-    }
-    username = nickname;
-    server.emit('join', nickname);
+        else if(nickname.indexOf(' ') != -1){
+            swal.showInputError('Please enter a username without a space.');
+            return false;
+        }
+        else {
+            username = nickname;
+
+            swal({
+                title: 'Good luck on your missions!',
+                confirmButtonText: 'Join Game'
+            }, function(){
+                server.emit('join', username);
+                server.emit('joingame');
+                $('#game').fadeIn(2000);
+            });
+
+        }
+    });
+
 }
 
 server.on('connect', userconnect);
 
 server.on('duplicate', function(){
-    alert('That username has already been taken, please enter another username.');
+    swal('That username has already been taken, please enter another username.');
     userconnect();
 });
 
