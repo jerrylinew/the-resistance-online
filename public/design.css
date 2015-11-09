@@ -13,11 +13,12 @@
     left: 0;
     z-index: -1;
     opacity: 0.4;
+    height: 50em;
 }
 
 body{
     font-family: Arial, sans-serif;
-    height: 60em;
+    height: 40em;
     width: 1352px;
     margin-left: auto;
     margin-right: auto;
@@ -27,6 +28,7 @@ body{
     height: 100%;
     width: 100%;
     display: none;
+    margin-top: 2em;
 }
 
 #logo{
